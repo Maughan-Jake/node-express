@@ -26,6 +26,8 @@ function calculateRate(req, res) {
         sum = .85;
       } else if (weight < 3.5) {
         sum = 1.00
+      } else {
+        sum = "The size you have chosen is too large"
       }
       break;
 
@@ -38,6 +40,8 @@ function calculateRate(req, res) {
         sum = .80;
       } else if (weight < 3.5) {
         sum = .95;
+      } else {
+        sum = "The size you have chosen is too large"
       }
       break;
 
@@ -55,14 +59,13 @@ function calculateRate(req, res) {
         sum = 5.53;
       } else if (weight > 12 && weight <= 13) {
         sum = 6.13;
+      } else {
+        sum = "The size you have chosen is too large"
       }
       break;
       
   }
 
-  
-  console.log(sum);
-  console.log("rate has been calculated");
   // Set up a JSON object of the values we want to pass along to the EJS result page
   const params = {
     weight: weight,
